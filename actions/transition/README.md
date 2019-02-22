@@ -9,7 +9,7 @@ Example transition action:
     action "Jira Transition" {
         uses = "atlassian/gajira/actions/transition@master"
         needs = ["Jira Login"]
-        args = "deployed to production --issue=GA-182"
+        args = "deployed to production --issue=GA-181"
     }
 
 You can omit `--issue` parameter if preceding action is [`Create`](../create) or [`Find Issue Key`](../find-issue-key) and just specify a transition name in action args. Here is full example workflow:
