@@ -1,0 +1,215 @@
+{
+    "projects": [{
+        "issuetypes": [{
+            "fields": {
+                "summary": {
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "system": "summary"
+                    },
+                    "name": "Summary",
+                    "key": "summary",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "set"
+                    ]
+                },
+                "issuetype": {
+                    "required": true,
+                    "schema": {
+                        "type": "issuetype",
+                        "system": "issuetype"
+                    },
+                    "name": "Issue Type",
+                    "key": "issuetype",
+                    "hasDefaultValue": false,
+                    "operations": [],
+                    "allowedValues": [{
+                        "self": "https://example.com/rest/api/2/issuetype/10002",
+                        "id": "10002",
+                        "description": "An event that causes disruption to or a reduction in the quality of a service which requires an emergency response",
+                        "iconUrl": "https://example.com/secure/viewavatar?size=xsmall&avatarId=10308&avatarType=issuetype",
+                        "name": "Incident",
+                        "subtask": false,
+                        "avatarId": 10308
+                    }]
+                },
+                "attachment": {
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": "attachment",
+                        "system": "attachment"
+                    },
+                    "name": "Attachment",
+                    "key": "attachment",
+                    "hasDefaultValue": false,
+                    "operations": []
+                },
+                "description": {
+                    "required": false,
+                    "schema": {
+                        "type": "string",
+                        "system": "description"
+                    },
+                    "name": "Description",
+                    "key": "description",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "set"
+                    ]
+                },
+                "project": {
+                    "required": true,
+                    "schema": {
+                        "type": "project",
+                        "system": "project"
+                    },
+                    "name": "Project",
+                    "key": "project",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "set"
+                    ],
+                    "allowedValues": [{
+                        "self": "https://example.com/rest/api/2/project/10000",
+                        "id": "10000",
+                        "key": "INC",
+                        "name": "Incidents",
+                        "projectTypeKey": "ops",
+                        "avatarUrls": {
+                            "48x48": "https://example.com/secure/projectavatar?avatarId=10324",
+                            "24x24": "https://example.com/secure/projectavatar?size=small&avatarId=10324",
+                            "16x16": "https://example.com/secure/projectavatar?size=xsmall&avatarId=10324",
+                            "32x32": "https://example.com/secure/projectavatar?size=medium&avatarId=10324"
+                        }
+                    }]
+                },
+                "customfield_10021": {
+                    "required": true,
+                    "schema": {
+                        "type": "option",
+                        "custom": "com.atlassian.jira.jira-incident-management-plugin:incident-severity",
+                        "customId": 10021
+                    },
+                    "name": "Severity",
+                    "key": "customfield_10021",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "set"
+                    ],
+                    "allowedValues": [{
+                            "id": "10001",
+                            "value": "1 - Critical",
+                            "position": 1,
+                            "iconUrl": "https://example.com/images/icons/ops/severities/Critical.svg"
+                        },
+                        {
+                            "id": "10002",
+                            "value": "2 - High",
+                            "position": 2,
+                            "iconUrl": "https://example.com/images/icons/ops/severities/High.svg"
+                        },
+                        {
+                            "id": "10000",
+                            "value": "3 - Moderate",
+                            "position": 3,
+                            "iconUrl": "https://example.com/images/icons/ops/severities/Moderate.svg"
+                        },
+                        {
+                            "id": "10008",
+                            "value": "4 - Low",
+                            "position": 4,
+                            "iconUrl": "https://example.com/images/icons/ops/severities/Low.svg"
+                        },
+                        {
+                            "id": "10009",
+                            "value": "5 - Informational",
+                            "position": 5,
+                            "iconUrl": "https://example.com/images/icons/ops/severities/Informational.svg"
+                        }
+                    ]
+                },
+                "issuelinks": {
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": "issuelinks",
+                        "system": "issuelinks"
+                    },
+                    "name": "Linked Issues",
+                    "key": "issuelinks",
+                    "autoCompleteUrl": "https://example.com/rest/api/2/issue/picker?currentProjectId=&showSubTaskParent=true&showSubTasks=true&currentIssueKey=null&query=",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "add"
+                    ]
+                },
+                "reporter": {
+                    "required": true,
+                    "schema": {
+                        "type": "user",
+                        "system": "reporter"
+                    },
+                    "name": "Reporter",
+                    "key": "reporter",
+                    "autoCompleteUrl": "https://example.com/rest/api/latest/user/search?query=",
+                    "hasDefaultValue": true,
+                    "operations": [
+                        "set"
+                    ]
+                },
+                "customfield_10022": {
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": "im-affected-services",
+                        "custom": "com.atlassian.jira.jira-incident-management-plugin:affected-services",
+                        "customId": 10022
+                    },
+                    "name": "Affected services",
+                    "key": "customfield_10022",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "add",
+                        "set",
+                        "remove"
+                    ],
+                    "allowedValues": []
+                },
+                "assignee": {
+                    "required": false,
+                    "schema": {
+                        "type": "user",
+                        "system": "assignee"
+                    },
+                    "name": "Assignee",
+                    "key": "assignee",
+                    "autoCompleteUrl": "https://example.com/rest/api/latest/user/assignable/search?project=INC&query=",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "set"
+                    ]
+                },
+                "labels": {
+                    "required": false,
+                    "schema": {
+                        "type": "array",
+                        "items": "string",
+                        "system": "labels"
+                    },
+                    "name": "Labels",
+                    "key": "labels",
+                    "autoCompleteUrl": "https://example.com/rest/api/1.0/labels/suggest?query=",
+                    "hasDefaultValue": false,
+                    "operations": [
+                        "add",
+                        "set",
+                        "remove"
+                    ]
+                }
+            }
+        }]
+    }]
+}
