@@ -2,14 +2,15 @@
 Transition Jira issue
 
 ## Usage:
+![Issue Transition](../../../assets/transition/example.gif?raw=true)
 
 Example usage args:
 
-    cancel --issue=INC-2
+    deployed to production --issue=GA-182
 
-You can omit `--issue` parameter if preceding action is [`Create`](../create) or [`Find`](../find) and just specify a transition name in action args:
+You can omit `--issue` parameter if preceding action is [`Create`](../create) or [`Find Issue Key`](../find-issue-key) and just specify a transition name in action args:
 
-    accept
+    deployed to production
 
 ----
 ## Action Spec:
