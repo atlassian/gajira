@@ -1,7 +1,7 @@
 FROM ubuntu
 
 LABEL "name"="Jira CLI"
-LABEL "maintainer"="Dima Rudzik <githubactions+drudzik@atlassian.net>"
+LABEL "maintainer"="Dima Rudzik <drudzik+githubactions@atlassian.net>"
 LABEL "version"="1.0.0"
 
 LABEL "com.github.actions.name"="Jira CLI"
