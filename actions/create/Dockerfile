@@ -15,6 +15,7 @@ ADD https://github.com/drudzikatlassian/github-action-jira/raw/add-gasv3/gagas .
 ADD . .
 RUN npm i
 RUN chmod +x /entrypoint.sh
+RUN chmod +x /test.sh
 RUN chmod +x /gagas
 
 ENTRYPOINT ["/entrypoint.sh"]
