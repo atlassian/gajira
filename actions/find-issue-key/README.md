@@ -1,4 +1,4 @@
-# Jira Find
+# Jira Find Issue Key
 Extract issue key from string
 
 ## Usage

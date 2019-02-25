@@ -75,7 +75,7 @@ module.exports = class {
       }]
 
       if (!argv.description) {
-        argv.description = `Created with GitHub commit ${commitUrl}`
+        argv.description = `Created with Github commit ${commitUrl}`
       }
 
       providedFields.push({
