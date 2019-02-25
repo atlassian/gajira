@@ -4,7 +4,7 @@ The GitHub Actions for [Jira](https://www.atlassian.com/software/jira) to create
 In the [demo-gajira](https://github.com/atlassian/gajira-demo) repository you'll find examples of what you can do with these actions, in particular:
 
 - Automatically transition an issue to done when a pull request whose name contains the issue key is merged
-- Automatically create a new Jira issue when a Github issue is created
+- Automatically create a new Jira issue when a GitHub issue is created
 - Automatically add a comment to a Jira issue when a commit message contains the issue key
 - Automatically create a Jira issue for each `// TODO:` in code
 
