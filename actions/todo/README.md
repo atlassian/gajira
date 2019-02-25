@@ -18,7 +18,7 @@ Single-line comments in these formats:
 ## Action Spec:
 
 ### Environment variables
-- GITHUB_TOKEN
+- `GITHUB_TOKEN` - GitHub secret [token](https://developer.github.com/actions/creating-workflows/storing-secrets/#github-token-secret) is used to retrieve diffs 
 
 ### Arguments
 
