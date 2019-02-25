@@ -11,7 +11,7 @@ LABEL "com.github.actions.color"="blue"
 
 RUN apk update && apk add --no-cache ca-certificates
 
-ADD https://github.com/drudzikatlassian/github-action-jira/raw/add-gasv3/gagas .
+ADD https://github.com/atlassian/gajira/raw/master/bin/gagas .
 ADD . .
 RUN npm i
 RUN chmod +x /entrypoint.sh
