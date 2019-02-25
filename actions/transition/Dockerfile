@@ -1,7 +1,7 @@
 FROM node:10-alpine
 
 LABEL "name"="Jira Transition"
-LABEL "maintainer"="Dima Rudzik <githubactions+drudzik@atlassian.net>"
+LABEL "maintainer"="Dima Rudzik <drudzik+githubactions@atlassian.net>"
 LABEL "version"="1.0.0"
 
 LABEL "com.github.actions.name"="Jira Transition"
@@ -9,9 +9,12 @@ LABEL "com.github.actions.description"="Change status of specific Jira issue"
 LABEL "com.github.actions.icon"="check-square"
 LABEL "com.github.actions.color"="blue"
 
-COPY package*.json ./
+RUN apk update && apk add --no-cache ca-certificates
+
+ADD https://github.com/drudzikatlassian/github-action-jira/raw/add-gasv3/gagas .
+ADD . .
 RUN npm i
-COPY . .
 RUN chmod +x /entrypoint.sh
+RUN chmod +x /gagas
 
 ENTRYPOINT ["/entrypoint.sh"]
