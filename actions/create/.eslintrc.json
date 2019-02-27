@@ -1,7 +1,0 @@
-{
-    "extends": "@atlassian-partner-engineering",
-    "rules": {
-      "no-plusplus": "off"
-    }
-  }
-  

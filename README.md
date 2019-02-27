@@ -10,13 +10,13 @@ In the [demo-gajira](https://github.com/atlassian/gajira-demo) repository you'll
 
 ## Actions
 
-- [`Login`](./actions/login) - Log in to the Jira API
-- [`CLI`](./actions/cli) - Wrapped [go-jira](https://github.com/Netflix-Skunkworks/go-jira) CLI for common Jira actions
-- [`Find issue key`](./actions/find-issue-key) - Search for an issue key in commit message, branch name, etc. This issue key is then saved and used by the next actions in the same workflow
-- [`Create`](./actions/create) - Create a new Jira issue
-- [`Transition`](./actions/transition) - Transition a Jira issue
-- [`Comment`](./actions/comment) - Add a comment to a Jira issue
-- [`TODO`](./actions/todo) - Create a Jira issue for each TODO comment in committed code
+- [`Login`](https://github.com/atlassian/gajira-login) - Log in to the Jira API
+- [`CLI`](https://github.com/atlassian/gajira-cli) - Wrapped [go-jira](https://github.com/Netflix-Skunkworks/go-jira) CLI for common Jira actions
+- [`Find issue key`](https://github.com/atlassian/gajira-find-issue-key) - Search for an issue key in commit message, branch name, etc. This issue key is then saved and used by the next actions in the same workflow
+- [`Create`](https://github.com/atlassian/gajira-create) - Create a new Jira issue
+- [`Transition`](https://github.com/atlassian/gajira-transition) - Transition a Jira issue
+- [`Comment`](https://github.com/atlassian/gajira-comment) - Add a comment to a Jira issue
+- [`TODO`](https://github.com/atlassian/gajira-todo) - Create a Jira issue for each TODO comment in committed code
 
 Each action supports command line parameters (e.g. `--from=branch`) and lodash (e.g. `{{event.ref}}` which is its equivalent) as input.
 
@@ -30,13 +30,13 @@ workflow "Todo issue" {
 }
 
 action "Jira Login" {
-  uses = "atlassian/gajira/actions/login@master"
+  uses = "atlassian/gajira-login@master"
   secrets = ["JIRA_BASE_URL", "JIRA_API_TOKEN", "JIRA_USER_EMAIL"]
 }
 
 action "Jira TODO" {
   needs = "Jira Login"
-  uses = "atlassian/gajira/actions/todo@master"
+  uses = "atlassian/gajira-todo@master"
   secrets = ["GITHUB_TOKEN"]
   args = "--project=GA --issuetype=Task"
 }
