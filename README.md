@@ -10,13 +10,13 @@ In the [demo-gajira](https://github.com/atlassian/gajira-demo) repository you'll
 
 ## Actions
 
-- [`Login`](https://github.com/atlassian/gajira-login) - Log in to the Jira API
-- [`CLI`](https://github.com/atlassian/gajira-cli) - Wrapped [go-jira](https://github.com/Netflix-Skunkworks/go-jira) CLI for common Jira actions
-- [`Find issue key`](https://github.com/atlassian/gajira-find-issue-key) - Search for an issue key in commit message, branch name, etc. This issue key is then saved and used by the next actions in the same workflow
-- [`Create`](https://github.com/atlassian/gajira-create) - Create a new Jira issue
-- [`Transition`](https://github.com/atlassian/gajira-transition) - Transition a Jira issue
-- [`Comment`](https://github.com/atlassian/gajira-comment) - Add a comment to a Jira issue
-- [`TODO`](https://github.com/atlassian/gajira-todo) - Create a Jira issue for each TODO comment in committed code
+- [`Login`](https://github.com/marketplace/actions/jira-login) - Log in to the Jira API
+- [`CLI`](https://github.com/marketplace/actions/jira-cli) - Wrapped [go-jira](https://github.com/Netflix-Skunkworks/go-jira) CLI for common Jira actions
+- [`Find issue key`](https://github.com/marketplace/actions/jira-find) - Search for an issue key in commit message, branch name, etc. This issue key is then saved and used by the next actions in the same workflow
+- [`Create`](https://github.com/marketplace/actions/jira-create) - Create a new Jira issue
+- [`Transition`](https://github.com/marketplace/actions/jira-transition) - Transition a Jira issue
+- [`Comment`](https://github.com/marketplace/actions/jira-comment) - Add a comment to a Jira issue
+- [`TODO`](https://github.com/marketplace/actions/jira-todo) - Create a Jira issue for each TODO comment in committed code
 
 Each action supports command line parameters (e.g. `--from=branch`) and lodash (e.g. `{{event.ref}}` which is its equivalent) as input.
 
