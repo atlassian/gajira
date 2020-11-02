@@ -1,7 +1,6 @@
 # GitHub Actions for Jira
 
 The GitHub Actions for [Jira](https://www.atlassian.com/software/jira) to create and edit Jira issues.
-In the [demo-gajira](https://github.com/atlassian/gajira-demo) repository you'll find examples of what you can do with these actions, in particular:
 
 - Automatically transition an issue to done when a pull request whose name contains the issue key is merged
 - Automatically create a new Jira issue when a GitHub issue is created
@@ -18,28 +17,38 @@ In the [demo-gajira](https://github.com/atlassian/gajira-demo) repository you'll
 - [`Comment`](https://github.com/marketplace/actions/jira-add-comment) - Add a comment to a Jira issue
 - [`TODO`](https://github.com/marketplace/actions/jira-issue-from-todo) - Create a Jira issue for each TODO comment in committed code
 
-Each action supports command line parameters (e.g. `--from=branch`) and lodash (e.g. `{{event.ref}}` which is its equivalent) as input.
-
 ## Usage
-An example workflow to create a Jira issue for each `//TODO` in code:
+An example workflow to transition issue on `push`:
 
 ```
-workflow "Todo issue" {
-  on = "push"
-  resolves = ["Jira Login"]
-}
+on:
+  push
 
-action "Jira Login" {
-  uses = "atlassian/gajira-login@master"
-  secrets = ["JIRA_BASE_URL", "JIRA_API_TOKEN", "JIRA_USER_EMAIL"]
-}
+name: Test Transition Issue
 
-action "Jira TODO" {
-  needs = "Jira Login"
-  uses = "atlassian/gajira-todo@master"
-  secrets = ["GITHUB_TOKEN"]
-  args = "--project=GA --issuetype=Task"
-}
+jobs:
+  test-transition-issue:
+    name: Transition Issue
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
+    - name: Find Issue Key
+      uses: ./
+      with:
+        from: commits
+
+    - name: Transition issue
+      uses: atlassian/gajira-transition@master
+      with:
+        issue: ${{ steps.create.outputs.issue }}
+        transition: "In Progress"
 ```
-
-More examples at [gajira-demo](https://github.com/atlassian/gajira-demo) repository
