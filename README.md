@@ -42,7 +42,7 @@ jobs:
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
 
     - name: Find Issue Key
-      uses: ./
+      uses: atlassian/gajira-find-issue-key@master
       with:
         from: commits
 
