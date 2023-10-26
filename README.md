@@ -1,3 +1,7 @@
+---------
+⚠️ This repository isn’t maintained anymore.
+---------
+
 # GitHub Actions for Jira
 
 The GitHub Actions for [Jira](https://www.atlassian.com/software/jira) to create and edit Jira issues.
