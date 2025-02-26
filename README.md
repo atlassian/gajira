@@ -1,5 +1,5 @@
 ---------
-⚠️ This repository isn’t maintained anymore.
+⚠️ This repository is no longer maintained and all Gajira actions have been deprecated.
 ---------
 
 # GitHub Actions for Jira
